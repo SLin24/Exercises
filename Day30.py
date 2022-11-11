@@ -22,6 +22,7 @@ win.geometry("750x250")
 
 #Define a function to show a message
 def myclick():
+    # get all the values from the input boxes
     message= "File Supposedly Created?"
     folderName = entryFolder.get()
     fileName = entryFile.get()
@@ -36,6 +37,7 @@ def myclick():
     entryFileType.delete(0, 'end')
     entryDir.delete(0, 'end')
 
+    # creating the file and preventing the creation of duplicate folders / files
     os.chdir(filePath)
     path = filePath + '\\' + folderName + '\\'
     if (not os.path.exists(path)):
@@ -73,7 +75,7 @@ entryFolder = ttk.Entry(frame, width= 40)
 entryFolder.insert(INSERT, "Enter Your Folder Name...")
 entryFolder.pack()
 
-
+# define the entry boxes
 entryFile = ttk.Entry(frame, width= 40)
 entryFile.insert(INSERT, "Enter Your File Name...")
 entryFile.pack()
